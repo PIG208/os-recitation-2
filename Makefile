@@ -149,9 +149,14 @@ UPROGS=\
 	$U/_usertests\
 	$U/_wc\
 	$U/_zombie\
+	$U/_hello\
+	$U/_mysh\
+	$U/_open\
+	$U/_shell\
+	$U/_expr\
 
-fs.img: mkfs/mkfs README.md $(UPROGS)
-	./mkfs/mkfs fs.img README.md $(UPROGS)
+fs.img: mkfs/mkfs README.md hello.txt $(UPROGS)
+	./mkfs/mkfs fs.img README.md hello.txt $(UPROGS)
 
 xv6.img: $K/bootblock $K/kernel fs.img
 	dd if=$K/bootblock of=xv6.img
