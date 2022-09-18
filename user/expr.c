@@ -106,10 +106,12 @@ int evaluate(Buffer buffer) {
             }
             else if (curState == PLUS) {
                 result += atoi(cur + 1);
+                curState = NUM;
             }
             else if (curState == MINUS) {
                 // 3 + 2 - 1
                 result -= atoi(cur + 1);
+                curState = NUM;
             }
         }
     }
